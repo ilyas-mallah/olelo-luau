@@ -1,0 +1,9 @@
+[
+  {"name": "greeting", "messages": [{"role": "user", "content": "hello, what is a hash table?"}]},
+  {"name": "system", "messages": [
+    {"role": "system", "content": "the quick brown fox"},
+    {"role": "user", "content": "numbers like 12345 are split"}
+  ]},
+  {"name": "raw", "text": "the dog does not mind"},
+  {"name": "long", "text": "the quick brown fox jumps over the lazy dog and the dog does not mind. hello world, this is a small model for tests. it has two layers and a tiny vocabulary. what is a hash table? a hash table maps keys to values."}
+]

@@ -1,0 +1,36 @@
+diff --git a/lute/cli/src/luauflags.cpp b/lute/cli/src/luauflags.cpp
+index a054d368..1fe9c9a8 100644
+--- a/lute/cli/src/luauflags.cpp
++++ b/lute/cli/src/luauflags.cpp
+@@ -3,6 +3,7 @@
+ #include "Luau/Common.h"
+ #include "Luau/ExperimentalFlags.h"
+ 
++#include <cstdlib>
+ #include <stdexcept>
+ #include <string_view>
+ 
+@@ -35,4 +36,23 @@ void setLuauFlags()
+ 
+     // Individual flags can be overridden here as needed, e.g.:
+     // setLuauFlag("LuauSomeFlagThatCausedARegression", false);
++
++    // LUTE_SET_FFLAGS=Name=true,Other=false sets any boolean flag after the defaults above.
++    if (const char* list = std::getenv("LUTE_SET_FFLAGS"))
++    {
++        std::string_view rest(list);
++
++        while (!rest.empty())
++        {
++            size_t comma = rest.find(',');
++            std::string_view item = rest.substr(0, comma);
++            rest = comma == std::string_view::npos ? std::string_view() : rest.substr(comma + 1);
++
++            size_t eq = item.find('=');
++            if (eq == std::string_view::npos)
++                throw std::runtime_error("LUTE_SET_FFLAGS entries look like Name=true");
++
++            setLuauFlag(item.substr(0, eq), item.substr(eq + 1) == "true");
++        }
++    }
+ }

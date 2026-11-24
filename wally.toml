@@ -1,0 +1,8 @@
+[package]
+name = "ilyas-mallah/olelo-luau"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "server"
+license = "MIT"
+description = "Runs released chat language models on the CPU in pure Luau, in Lute and on Roblox servers."
+include = ["src", "backends", "default.project.json", "LICENSE", "README.md"]

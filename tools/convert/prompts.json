@@ -1,0 +1,17 @@
+[
+  {"name": "greeting", "messages": [{"role": "user", "content": "Hi, who are you?"}]},
+  {"name": "hash table", "messages": [{"role": "user", "content": "Explain what a hash table is in two sentences."}]},
+  {"name": "system haiku", "messages": [
+    {"role": "system", "content": "You are a poet who answers in haiku."},
+    {"role": "user", "content": "Write about the sea."}
+  ]},
+  {"name": "raw capital", "text": "The capital of France is"},
+  {"name": "long prefill", "messages": [
+    {"role": "user", "content": "Summarize this paragraph in one sentence: Luau is a fast, small, safe, gradually typed embeddable scripting language derived from Lua. It is used by Roblox to build games and by many other projects as a scripting layer. Its virtual machine can compile hot functions to native code, which makes numeric loops several times faster than the interpreter, and its buffer type gives direct access to raw memory without the overhead of tables."}
+  ]},
+  {"name": "multi turn", "messages": [
+    {"role": "user", "content": "My name is Ada."},
+    {"role": "assistant", "content": "Nice to meet you, Ada."},
+    {"role": "user", "content": "What is my name?"}
+  ]}
+]

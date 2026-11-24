@@ -1,0 +1,6 @@
+/out/
+/models/*
+!/models/README.md
+/build/
+__pycache__/
+*.pyc

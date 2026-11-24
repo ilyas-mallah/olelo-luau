@@ -1,0 +1,7 @@
+{
+    "name": "olelo-luau",
+    "tree": {
+        "$className": "ModuleScript",
+        "$path": "src"
+    }
+}
